@@ -1,0 +1,9 @@
+{
+  "name": "web_node-js",
+  "version": "0.0.0",
+  "description": "Web_NodeJS",
+  "main": "server.js",
+  "author": {
+    "name": "hong"
+  }
+}
