@@ -3,14 +3,14 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>Web_NodeJS</Name>
-    <RootNamespace>Web_NodeJS</RootNamespace>
+    <Name>Unity_forNodeJS</Name>
+    <RootNamespace>Unity_forNodeJS</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>e9da107d-13b4-454e-939d-9794185cba22</ProjectGuid>
+    <ProjectGuid>989427ce-e6f2-4b62-ad36-5179d654a9ba</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>bin\www</StartupFile>
     <SearchPath>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="routes\index.js" />
-    <Compile Include="routes\uploader.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
@@ -42,6 +41,7 @@
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
+    <Content Include="views\users.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
@@ -50,7 +50,6 @@
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
-    <Folder Include="upload\" />
     <Folder Include="views\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

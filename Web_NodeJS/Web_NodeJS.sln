@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Web_NodeJS", "Web_NodeJS\Web_NodeJS.njsproj", "{CFE7125D-A439-488D-9299-4EB9AA23F7B5}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Web_NodeJS", "Web_NodeJS\Web_NodeJS.njsproj", "{E9DA107D-13B4-454E-939D-9794185CBA22}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Unity_forNodeJS", "Unity_forNodeJS\Unity_forNodeJS.njsproj", "{989427CE-E6F2-4B62-AD36-5179D654A9BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CFE7125D-A439-488D-9299-4EB9AA23F7B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFE7125D-A439-488D-9299-4EB9AA23F7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFE7125D-A439-488D-9299-4EB9AA23F7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFE7125D-A439-488D-9299-4EB9AA23F7B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9DA107D-13B4-454E-939D-9794185CBA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9DA107D-13B4-454E-939D-9794185CBA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9DA107D-13B4-454E-939D-9794185CBA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9DA107D-13B4-454E-939D-9794185CBA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989427CE-E6F2-4B62-AD36-5179D654A9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989427CE-E6F2-4B62-AD36-5179D654A9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989427CE-E6F2-4B62-AD36-5179D654A9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989427CE-E6F2-4B62-AD36-5179D654A9BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
