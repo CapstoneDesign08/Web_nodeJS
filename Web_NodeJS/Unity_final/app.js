@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var process = require('child_process');
 
 var routes = require('./routes/index');
 var upload = require('./routes/upload');
@@ -31,41 +32,41 @@ app.use('/upload', upload);
 app.post('/upload', function (req, res, next) {
     var id = req.body.id;
     var play = req.body.play;
-    //score test
-    if (play == 1) {
-        //dll compile
-        /*process.exec(){
+    fs.writeFileSync('C:\\Users\\hong\\Desktop\\visualstudioTest\\MyAssembly.cs', req.body.source , 'utf8');
+    console.log('writeFileSync completed');
+    if (play == 1) {         //score test
+        /* make dll
+        process.exec("csc.lnk -target:library -out:C:\\Users\\hong\\Desktop\\visualstudioTest\\MyAssembly.dll -r:C:\\Progra~1\\Unity\\Editor\\Data\\PlaybackEngines\\WebGLSupport\\Managed\\UnityEngine.dll C:\\Users\\hong\\Source\\Repos\\Web_nodeJS\\Web_NodeJS\\Unity_final\\MyAssembly.cs", function (err, stdout, stderr) {         //dll compile
             errchk(err);
             //print result on console
             console.log("dll compile complete" + id);
-        }*/
+        });*/
         //unity start
-       // process.exec("C:\\Progra~1\\Unity\\Editor\\Unity.exe -projectPath \"C:\\Users\\hong\\Desktop\\DllTest\" -quit -batchmode -executeMethod WebGLBuilder.build", function (err, stdout, stderr) {
-          //  errchk(err);
-
-            //print result on console
-        //    console.log(stdout);
-        console.log("run complete user - " + id);
-       // });
+        process.exec("C:\\Progra~1\\Unity\\Editor\\Unity.exe -projectPath \"C:\\Users\\hong\\Desktop\\TankTest_Grade\" -batchmode -quit -buildWindows64Player C:\\Users\\hong\\Desktop\\TankTest_Grade\\test.exe", function (err, stdout, stderr) {
+            errchk(err);
+            console.log("run complete user - " + id);
+            process.exec("start C:\\Users\\hong\\Desktop\\TankTest_Grade\\test.exe -batchmode -nographics", function (err, stdout, stderr) {
+                errchk(err);
+                console.log("Unity play fin");
+            });
+        });
     }
-    //web view test
-    else if (play == 2) {
-        /*
-        process.exec(){        //dll compile
-            errchk(err);
-            //print result on console
-            console.log("dll compile complete" + id);
-        }
+    else if (play == 2) {     //web view test
+        //make dll
         //unity start
-        process.exec("C:\\Progra~1\\Unity\\Editor\\Unity.exe -projectPath \"C:\\Users\\hong\\Desktop\\DllTest\" -quit -batchmode -executeMethod WebGLBuilder.build", function (err, stdout, stderr) {
+        process.exec("C:\\Progra~1\\Unity\\Editor\\Unity.exe -projectPath \"C:\\Users\\hong\\Desktop\\TankTest_Grade\" -batchmode -quit -executeMethod WebGLBuilder.build", function (err, stdout, stderr) {
             errchk(err);
 
             //print result on console
-            console.log(stdout);
-        */
             console.log("build complete user - " + id);
-        }
+        });
+    }
 });
+
+var errchk = function errchk(err) {
+    if (err != null)
+        console.log(err);
+}
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
