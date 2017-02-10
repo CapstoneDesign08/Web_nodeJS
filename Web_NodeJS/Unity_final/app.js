@@ -1,4 +1,4 @@
-﻿var express = require('express');
+﻿var express = require('express'); 
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -9,7 +9,7 @@ var process = require('child_process');
 
 var routes = require('./routes/index');
 var upload = require('./routes/upload');
-
+var webgl = require('./routes/webgl');
 var app = express();
 
 // view engine setup
@@ -28,12 +28,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/upload', upload);
+app.use('/webgl', webgl);
 
 app.post('/upload', function (req, res, next) {
     var id = req.body.id;
     var play = req.body.play;
-    fs.writeFileSync('C:\\Users\\hong\\Desktop\\visualstudioTest\\MyAssembly.cs', req.body.source , 'utf8');
-    console.log('writeFileSync completed');
+    fs.writeFileSync('C:\\Users\\hong\\Desktop\\visualstudioTest\\MyAssembly.cs', req.body.source, 'utf8');
+    fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player_ID.cs', "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = "+id+";}", 'utf8');
+    console.log('FileSync completed');
     if (play == 1) {         //score test
         /* make dll
         process.exec("csc.lnk -target:library -out:C:\\Users\\hong\\Desktop\\visualstudioTest\\MyAssembly.dll -r:C:\\Progra~1\\Unity\\Editor\\Data\\PlaybackEngines\\WebGLSupport\\Managed\\UnityEngine.dll C:\\Users\\hong\\Source\\Repos\\Web_nodeJS\\Web_NodeJS\\Unity_final\\MyAssembly.cs", function (err, stdout, stderr) {         //dll compile

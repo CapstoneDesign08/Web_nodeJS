@@ -13,19 +13,19 @@ var options = {
     url: 'http://localhost:1337/upload',
     method: 'POST',
     headers: headers,
-    form: { 'id': 2, 'play': 1, 'source' : 'sadf' }
+    form: { 'id': 1, 'play': 1, 'source' : 'sadf' }
 }
 
 
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('index', { title: 'Express' });
-    /*post test
-    request(options, function (error, response, body) {
+    //post test
+    /*request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body)
         }
-    }) */ 
+    })*/  
 });
   
 module.exports = router;

@@ -34,6 +34,7 @@
     <Compile Include="routes\index.js" />
     <Compile Include="bin\www" />
     <Compile Include="routes\upload.js" />
+    <Compile Include="routes\webgl.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
