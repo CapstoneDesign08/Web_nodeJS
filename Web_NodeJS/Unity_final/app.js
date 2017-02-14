@@ -1,6 +1,5 @@
 ﻿var express = require('express'); 
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -13,14 +12,13 @@ var upload = require('./routes/upload');
 
 var app = express();
 
+
 // view engine setup
 app.engine('jade', engines.jade);
 app.engine('html', engines.ejs);
 //app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
@@ -40,17 +38,12 @@ app.post('/upload', function (req, res, next) {
     var play = req.body.play;
     res.send('good request');
     if (play == 1) {         //score test
+        var pass_id = "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = " + id + ";}"
         fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player.cs', req.body.source, 'utf8');
-        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player_ID.cs', "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = " + id + ";}", 'utf8');
+        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player_ID.cs', pass_id, 'utf8');
         fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player.cs', req.body.source, 'utf8');
-        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player_ID.cs', "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = " + id + ";}", 'utf8');
+        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player_ID.cs', pass_id, 'utf8');
         console.log('FileSync completed');
-        /* make dll
-        process.exec("csc.lnk -target:library -out:C:\\Users\\hong\\Desktop\\visualstudioTest\\MyAssembly.dll -r:C:\\Progra~1\\Unity\\Editor\\Data\\PlaybackEngines\\WebGLSupport\\Managed\\UnityEngine.dll C:\\Users\\hong\\Source\\Repos\\Web_nodeJS\\Web_NodeJS\\Unity_final\\MyAssembly.cs", function (err, stdout, stderr) {         //dll compile
-            errchk(err);
-            //print result on console
-            console.log("dll compile complete" + id);
-        });*/
         //unity start
         process.exec("C:\\Progra~1\\Unity\\Editor\\Unity.exe -projectPath \"C:\\Users\\hong\\Desktop\\TankTest_Grade\" -batchmode -quit -buildWindows64Player C:\\Users\\hong\\Desktop\\TankTest_Grade\\test.exe", function (err, stdout, stderr) {
             if (err != null)
