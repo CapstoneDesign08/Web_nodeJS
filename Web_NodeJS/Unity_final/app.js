@@ -10,7 +10,7 @@ var engines = require('consolidate');
 
 var routes = require('./routes/index');
 var upload = require('./routes/upload');
-var webgl = require('./routes/webgl');
+
 var app = express();
 
 // view engine setup
@@ -38,13 +38,13 @@ app.use('/webgl', express.static(path.join('/Users/hong/Desktop/TankTest_WebGL/W
 app.post('/upload', function (req, res, next) {
     var id = req.body.id;
     var play = req.body.play;
-    fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player.cs', req.body.source, 'utf8');
-    fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player_ID.cs', "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = " + id + ";}", 'utf8');
-    fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player.cs', req.body.source, 'utf8');
-    fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player_ID.cs', "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = " + id + ";}", 'utf8');
-    console.log('FileSync completed');
     res.send('good request');
     if (play == 1) {         //score test
+        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player.cs', req.body.source, 'utf8');
+        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player_ID.cs', "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = " + id + ";}", 'utf8');
+        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player.cs', req.body.source, 'utf8');
+        fs.writeFileSync('C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player_ID.cs', "using System.Collections;using System.Collections.Generic;using UnityEngine;public class Player_ID : MonoBehaviour{ public static int player_id = " + id + ";}", 'utf8');
+        console.log('FileSync completed');
         /* make dll
         process.exec("csc.lnk -target:library -out:C:\\Users\\hong\\Desktop\\visualstudioTest\\MyAssembly.dll -r:C:\\Progra~1\\Unity\\Editor\\Data\\PlaybackEngines\\WebGLSupport\\Managed\\UnityEngine.dll C:\\Users\\hong\\Source\\Repos\\Web_nodeJS\\Web_NodeJS\\Unity_final\\MyAssembly.cs", function (err, stdout, stderr) {         //dll compile
             errchk(err);
