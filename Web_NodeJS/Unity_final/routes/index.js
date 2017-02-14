@@ -20,12 +20,12 @@ var options = {
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('index', { title: 'Express' });
-    //post test
-    /*request(options, function (error, response, body) {
+    /*post test
+    request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body)
         }
-    })*/  
+    })*/
 });
   
 module.exports = router;
