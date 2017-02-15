@@ -34,7 +34,7 @@ var grade_player = "C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\P
 var grade_player_id = "C:\\Users\\hong\\Desktop\\TankTest_Grade\\Assets\\Scripts\\Player\\Player_ID.cs";
 var webgl_player = "C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player.cs";
 var webgl_player_id = "C:\\Users\\hong\\Desktop\\TankTest_WebGL\\Assets\\Scripts\\Player\\Player_ID.cs";
-
+//유니티경로 -projectPath 프로젝트경로 batchmode -quit (executeMethod) 빌드종류 [생성할 파일경로 및 이름]
 var grade_build = "C:\\Progra~1\\Unity\\Editor\\Unity.exe -projectPath \"C:\\Users\\hong\\Desktop\\TankTest_Grade\" -batchmode -quit -buildWindows64Player C:\\Users\\hong\\Desktop\\TankTest_Grade\\test.exe";
 var grade_run = "start C:\\Users\\hong\\Desktop\\TankTest_Grade\\test.exe -batchmode -nographics";
 var webgl_build = "C:\\Progra~1\\Unity\\Editor\\Unity.exe -projectPath \"C:\\Users\\hong\\Desktop\\TankTest_WebGL\" -batchmode -quit -executeMethod WebGLBuilder.build";
