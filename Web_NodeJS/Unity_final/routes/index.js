@@ -1,14 +1,14 @@
 ﻿var express = require('express');
-var router = express.Router();
 var request = require('request');
+var router = express.Router();
 
-// 헤더 부분
+// post헤더 부분
 var headers = {
     'User-Agent': 'Super Agent/0.0.1',
     'Content-Type': 'application/x-www-form-urlencoded'
 }
 
-// 요청 세부 내용
+// post요청 세부 내용
 var options = {
     url: 'http://localhost:1337/upload',
     method: 'POST',

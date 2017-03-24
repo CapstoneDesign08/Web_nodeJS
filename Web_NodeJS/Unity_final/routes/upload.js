@@ -4,7 +4,6 @@ var router = express.Router();
 
 /* GET listen */
 router.get('/', function (req, res) {
-
     res.send('bad request');
 });
 
